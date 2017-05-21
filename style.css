@@ -8,24 +8,28 @@ body {
 	background:silver;
 	font-size: 15px;
 	font-weight: 600;
+    margin:20px 40px;
+    
 }
 
 #container {
-	width:40%;
-	height: 400px;
+	width:60%;
+	height: auto;
 	background: white;
 	margin: 0 auto;
 	padding: 20px;
-	overflow-y: scroll;
 }
 
 #chat_box {
-	width:90%;
-	height:400px;
+	width:auto;
+	height:auto;
 }
-
+#chat {
+    height:auto;
+    overflow-y: scroll;
+}
 #chat_data {
-	width:100%;
+	width:auto;
 	padding: 5px;
 	margin-bottom:7px;
 	border-bottom: 2px solid silver;
@@ -33,10 +37,13 @@ body {
 
 .user {
 	color: darkgreen;
+   width:100px;
+    
 }
 
 .usr_chat {
 	color: brown;
+    width:200px;
 }
 
 .time {

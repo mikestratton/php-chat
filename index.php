@@ -4,30 +4,29 @@ include 'db.php';
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-	<title>Ajax/PHP Chat - Udemy Course</title>
-	<link rel="stylesheet" href="style.css" media="all" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	
-<body>
+<head>
+<title>Ajax/PHP Chat - Udemy Course</title>
+<link rel="stylesheet" href="style.css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    function ajax(){
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+            if(req.readyState == 4 && req.status == 200){   
+                document.getElementById('chat').innerHTML = req.responseText;
+            } 
+        }
+        req.open('GET','chat.php',true);
+        req.send();
+    }
+    
+    setInterval(function(){ajax()},1000);
+</script>
+</head>
+<body onload="ajax();">
 <div id="container">
 	<div id="chat_box">
-	<?php
-		$query = "SELECT * FROM chat ORDER BY id DESC";
-		$run = $connect->query($query);
-		
-		while ($row = $run->fetch_array()) :
-		
-	?>
-	
-	
-		<div id="chat_data">
-			<span class="user"><?php echo $row['name']; ?> &#8594; </span>
-			<span class="usr_chat"><?php echo $row['msg']; ?></span>
-			<span class="time"><?php echo formatDate($row['time']); ?></span>
-		</div>
-		<?php endwhile; ?>
+        <div id="chat"></div>
 	</div>
 	
 	<form method="post" action="index.php">
@@ -46,7 +45,7 @@ include 'db.php';
 		$run = $connect->query($query);
 		
 		if($run) {
-			echo "<embed loop='false' src='chat.wav' hidden='true' autoplay='true' />"; 
+			echo "<embed loop='false' src='chat.mp3' hidden='true' autoplay='true' />"; 
 		}
 	}
 	
