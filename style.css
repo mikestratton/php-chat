@@ -6,18 +6,19 @@
 
 body {
 	background:silver;
-	font-size: 15px;
+	font-size: 22px;
 	font-weight: 600;
-    margin:20px 40px;
-    
+  margin:20px 40px;
+  background-image: url("wall-bg.gif");  
 }
 
 #container {
 	width:60%;
 	height: auto;
-	background: white;
+	background-color:rgba(255,255,255,0.9);
 	margin: 0 auto;
 	padding: 20px;
+  border-radius:15px;
 }
 
 #chat_box {
@@ -32,47 +33,58 @@ body {
 	width:auto;
 	padding: 5px;
 	margin-bottom:7px;
-	border-bottom: 2px solid silver;
+	border-bottom: 2px solid red;
 }
 
 .user {
-	color: darkgreen;
+	color: darkred;
    width:100px;
     
 }
 
 .usr_chat {
-	color: brown;
+	color: black;
     width:200px;
 }
 
 .time {
-	color: darkgray;
+	color: black;
 	float:right;
 }
 
+.submit {
+  text-align:center;
+}
+
 input[type='text'] {
-	width:100%;
-	height:40px;
-	border:2px dashed silver;
+	width:50%;
+	height:auto;
+  text-align:center;
+  font-size:22px;
+	border:2px solid darkred;
 	border-radius:7px;
-	margin: 5px 0;
+	margin: 0 auto;
 }
 
 input[type='submit'] {
-	width:100%;
-	height:40px;
-	border:2px solid silver;
-	background:skyblue;
+	width:50%;
+  text-align:center;
+	height:auto;
+  font-size:22px;
+	border:2px solid darkred;
+	background:red;
+  color:white;
 	border-radius:7px;
-	margin: 5px auto;
-	right:0;
+	margin: 0 auto;
+	
 }
 
 textarea {
-	width:100%;
-	height:40px;
-	border:2px dashed silver;
+	width:50%;
+	height:auto;
+  text-align:center;
+  font-size:22px;
 	border-radius:7px;
-	margin: 5px 0;
+	border:2px solid darkred;
+	margin: 7px auto;
 }
