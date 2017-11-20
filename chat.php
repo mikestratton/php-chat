@@ -7,10 +7,8 @@
 
 ?>
 
-
     <div id="chat_data">
-
-        <span class="user"><?php echo $row['name']; ?> &#8594; </span>
+        <span class="id">&nbsp; #<?php echo $row['id']; ?>  &nbsp;</span>
         <span class="usr_chat"><?php echo $row['msg']; ?></span>
         <span class="time"><?php echo formatDate($row['date']); ?></span>
     </div>

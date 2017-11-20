@@ -6,7 +6,6 @@
 
 body {
 	background:silver;
-	font-size: 12px;
 	font-weight: 600;
 	background-image: url("wall-bg.gif");
 
@@ -14,11 +13,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color:darkred;
+	padding: 0 7px 0 0;
 }
+
 #container {
-	height:100vh;
-	background-color:rgba(255,255,255,0.8);
-	padding: 20px;
+
+	background-color:rgba(255,255,255,0.9);
+	padding: 7px 20px;
 	border-radius:8px;
 }
 
@@ -31,23 +32,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 #chat_data {
 	width:auto;
-	padding: 5px;
+	padding: 11px 9px;
 	margin:7px 0;
-	border-bottom: 1px solid lightgray;
+	border: silver thin solid;
 }
 
 .user {
 	color: darkred;
-   width:100px;
-    
+	width:100px;
 }
 
 .usr_chat {
 	color: black;
     width:200px;
+	font-size: 16px;
 }
 
 .time {
 	color: black;
 	float:right;
+	padding: 2px 5px;
+	background-color: rgba(139,0,0,0.5);
+	border-radius: 4px;
+}
+
+.txtarea {
+	background-color: #d9534f;
+	border-radius: 10px;
+	color:white;
+	display: block;
+	width: 100%;
+	padding: 6px 12px 0 12px;
+	margin:0;
+	font-size: 15px;
+	background-image: none;
+	border: 2px solid #d43f3a;
+	-webkit-box-shadow: inset 0 1px 1px rgba(139,0,0,0.5);
+	box-shadow: inset 0 2px 2px rgba(139,0,0,0.5);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.logo {
+	width:100%;
+	height:auto
+}
+
+.id {
+	background-color: red;
+	text-align:right;
+	color:white;
+	font-size: 10px;
+	padding:5px 0px;
+	margin: 0 7px;
+	border:white 8px double;
+	border-radius: 8px;
+}
+
+.frk-btn {
+	text-align: right;
+	margin-top:0px;
+	padding-top:0px;
+}
+
+.form-group, btm-4 {
+	margin-bottom: 4px;
 }
