@@ -77,7 +77,7 @@ function random_color() {
                 rights, anonymously. Opinions of users of this site do not reflect the opinions or beliefs of the
                 owners of this site. Use at your own risk.</p>
 
-            <h2>Farknoff<sup><span style="font-size:14px; color:black;"> v0.05</span></sup> <br> Beta Release  </h2>
+            <h2>Farknoff<sup><span style="font-size:14px; color:black;"> v0.06</span></sup> <br> Beta Release  </h2>
             <p>Site is under active development. Questions, concerns or comments can be directed
                 to our <a href="http://twitter.com/farknoff" target="_blank">Twitter account</a>.</p>
             <h2>About Farknoff</h2>
@@ -101,6 +101,8 @@ function random_color() {
         if(isset($_POST['submit'])) {
 
           $msg = $_POST['msg'];
+
+          $msg = mysqli_real_escape_string($connect, $msg); //sanitize, prevent sql injection
 
           $query = "INSERT INTO chat (msg) value ('$msg')";
 
