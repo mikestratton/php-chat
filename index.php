@@ -77,7 +77,7 @@ function random_color() {
                 rights, anonymously. Opinions of users of this site do not reflect the opinions or beliefs of the
                 owners of this site. Use at your own risk.</p>
 
-            <h2>Farknoff<sup><span style="font-size:14px; color:black;"> v0.06</span></sup> <br> Beta Release  </h2>
+            <h2>Farknoff<sup><span style="font-size:14px; color:black;"> v0.08</span></sup> <br> Beta Release  </h2>
             <p>Site is under active development. Questions, concerns or comments can be directed
                 to our <a href="http://twitter.com/farknoff" target="_blank">Twitter account</a>.</p>
             <h2>About Farknoff</h2>
@@ -101,10 +101,24 @@ function random_color() {
         if(isset($_POST['submit'])) {
 
           $msg = $_POST['msg'];
+          $remote_ip = $_SERVER['REMOTE_ADDR'];
 
           $msg = mysqli_real_escape_string($connect, $msg); //sanitize, prevent sql injection
+          $remote_ip = mysqli_real_escape_string($connect, $remote_ip);
 
-          $query = "INSERT INTO chat (msg) value ('$msg')";
+            $is_forwarded = isset($_SERVER['HTTP_X_FORWARDED_FOR']);
+
+            if($is_forwarded == true) {
+                $forwarded_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                $forwarded_ip = mysqli_real_escape_string($connect, $forwarded_ip);
+            }
+            else {
+                $forwarded_ip = "IP ADDRESS NOT FORWARDED";
+                $forwarded_ip = mysqli_real_escape_string($connect, $forwarded_ip);
+            }
+
+          $query = "INSERT INTO chat (msg, ip_address, spoofed, spoofed_ip) 
+                    values ('$msg', '$remote_ip', '$is_forwarded', '$forwarded_ip')";
 
           $run = $connect->query($query);
 
