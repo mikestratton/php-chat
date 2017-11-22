@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: text/html; charset=ISO-8859-1");
     include 'db.php';
     $query = "SELECT * FROM chat ORDER BY id DESC LIMIT 30";
     $run = $connect->query($query);
