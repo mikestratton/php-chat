@@ -8,7 +8,7 @@ body {
 	background:silver;
 	font-weight: 600;
 	background-image: url("wall-bg.gif");
-
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,14 +84,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .id {
-	background-color: red;
+	background-color: black;
 	text-align:right;
 	color:white;
 	font-size: 10px;
-	padding:5px 0px;
-	margin: 0 7px;
-	border:white 8px double;
-	border-radius: 8px;
+	padding:2px;
+	margin: 0 5px;
+	border-radius: 4px;
 }
 
 .frk-btn {
